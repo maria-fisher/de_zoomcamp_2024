@@ -33,24 +33,24 @@ def load_data_from_api(*args, **kwargs):
                     'total_amount':float,
                     'congestion_surcharge':float
                 }
-   
-     # List to store dataframes from each file
-    dfs = []
+    # List to store dataframes from each file
+dfs = []
 
-    # Loop through each URL
-    for url in urls:
-        # Use Pandas to read CSV and parse dates
-        df = pd.read_csv(url, parse_dates=['lpep_pickup_datetime', 'lpep_dropoff_datetime'])
+# Loop through each URL
+for url in urls:
+    # Use Pandas to read CSV and parse dates
+    df = pd.read_csv(url, parse_dates=['lpep_pickup_datetime', 'lpep_dropoff_datetime'])
 
-        # Append the dataframe to the list
-        dfs.append(df)
+    # Append the dataframe to the list
+    dfs.append(df)
 
-    # Concatenate dataframes using pd.concat
-    final_df = pd.concat(dfs, ignore_index=True)
+# Use append to combine dataframes
+final_df = dfs[0]
+for df in dfs[1:]:
+    final_df = final_df.append(df, ignore_index=True)
 
-    # Return the concatenated dataframe
-    return final_df
-     
+# Return the concatenated dataframe
+return final_df
      
     
 @test
