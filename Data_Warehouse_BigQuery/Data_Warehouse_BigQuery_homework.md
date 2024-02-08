@@ -1,7 +1,7 @@
-# Week 3 Homework
+# Data Warehouse BigQuery - Week 3 Homework
 #### Maria Fisher 
 
-### Instructions 
+## Instructions 
 <b><u>Important Note:</b></u> <p> For this homework we will be using the 2022 Green Taxi Trip Record Parquet Files from the New York
 City Taxi Data found here: </br> https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page </br>
 If you are using orchestration such as Mage, Airflow or Prefect do not load the data into Big Query using the orchestrator.</br> 
